@@ -1,0 +1,19 @@
+.admin {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  transition: all 0.5s ease;
+}
+.admin__show {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+}
+@media (max-width: 1300px) {
+  .admin {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .admin__show {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

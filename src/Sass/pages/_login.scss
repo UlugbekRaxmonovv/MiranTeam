@@ -1,0 +1,64 @@
+.login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f6fa;
+  &__wrapper {
+    padding: 40px ;
+    background-color: #fff;
+    max-width: 450px;
+    border-radius: 6px;
+  }
+  &__bottom-box {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__text {
+    font-size: 14px;
+    color: #b6b6b6;
+     margin-top: -30px
+  }
+  &__title {
+    // margin-bottom: 10px;
+    font-size: 28px;
+    text-align: center;
+    font-family: Leelawadee UI;
+    font-weight: 700;
+    line-height: 63.84px;
+    letter-spacing: 0.33em;
+    margin-top: -5%;
+   
+    span{
+      font-family: Leelawadee UI;
+      font-weight: 700;
+      line-height: 63.84px;
+      letter-spacing: 0.33em;
+      text-align: left;
+      color: #FF0D0D;
+      
+    }
+  }
+  &__register-link {
+    color: rgba(0, 0, 255, 0.678);
+    text-decoration: underline;
+  }
+ 
+}
+
+@media(max-width:360px){
+  .login {
+    &__title {
+      // margin-bottom: 10px;
+      font-size: 23px;
+     
+    
+    }
+  
+   
+  }
+  
+}

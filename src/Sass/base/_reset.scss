@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Nunito Sans", sans-serif;
+  border-collapse: collapse;
+}
+a {
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+.container {
+  width: 100%;
+  padding: 30px 16px 60px 36px;
+  // background-color: #f5f6fa;
+  min-height: 100vh;
+  @media (max-width: 1300px) {
+    padding: 30px 16px 60 16px;
+  }
+}
+

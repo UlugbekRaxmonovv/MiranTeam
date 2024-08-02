@@ -1,0 +1,35 @@
+.modal__overly {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #0000002c;
+  z-index: 99999;
+}
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  z-index: 99999;
+  &__button-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  animation: animationModal 0.7s forwards ease;
+  &__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+}
+@keyframes animationModal {
+  to {
+    top: 50%;
+  }
+}
