@@ -50,7 +50,7 @@ const Register = ({menu,setMenu,render,setRender}) => {
     company_name: state.company_name
   }
   axios
-   .post(`https://obidjon.pythonanywhere.com/api/v1/company/`, company, {
+   .post(`https://miransub.miranteam.uz/api/v1/company/`, company, {
       headers: {
         Authorization: `Bearer ${isLogin}`,
       },
@@ -58,7 +58,7 @@ const Register = ({menu,setMenu,render,setRender}) => {
     .then((res) => {
       setCompany(true)
       setState(initialState)
-      setRender( p => !p)
+      setRender(p => !p)
       toast.success('User created')
     })
     .catch((error) => {
@@ -79,7 +79,7 @@ let isLogin = useSelector(state => state.auth.token)
 useEffect(() => {
   setLoading(true);
   axios
-    .get(`https://obidjon.pythonanywhere.com/api/v1/company/?status=${selectedStatus}`, {
+    .get(`https://miransub.miranteam.uz/api/v1/company/?status=${selectedStatus}`, {
       headers: {
         Authorization: `Bearer ${isLogin}`,
       },
@@ -117,7 +117,7 @@ const handlePageChange = (event, value) => {
 
   const handelComponyAll = (id) =>{
     axios
-    .patch(`https://obidjon.pythonanywhere.com/api/v1/company-status/${id}/status/`,{},{
+    .patch(`https://miransub.miranteam.uz/api/v1/company-status/${id}/status/`,{},{
         headers: { 
           'Authorization': `Bearer ${isLogin}`,
            'content-type': "application/json"

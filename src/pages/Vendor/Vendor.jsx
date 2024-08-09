@@ -54,7 +54,7 @@ const Vendor = ({menu,setMenu,render}) => {
     useEffect(() => {
       setLoading(true);
       axios
-        .get(`https://obidjon.pythonanywhere.com/api/v1/api/accounts/?status=${selectedStatus}`, {
+        .get(`https://miransub.miranteam.uz/api/v1/accounts/?status=${selectedStatus}`, {
           headers: {
             Authorization: `Bearer ${isLogin}`,
           },

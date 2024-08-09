@@ -49,7 +49,7 @@ const EditAdmins = ({ menu, setMenu }) => {
 
   useEffect(() => {
     axios
-      .get(`https://obidjon.pythonanywhere.com/api/v1/api/accounts/${id}/`, {
+      .get(`https://miransub.miranteam.uz/api/v1/accounts/${id}/`, {
         headers: {
           'Authorization': `Bearer ${isLogin}`
         }
@@ -71,7 +71,7 @@ const EditAdmins = ({ menu, setMenu }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .patch(`https://obidjon.pythonanywhere.com/api/v1/api/accounts/${id}/`, data,{
+      .patch(`https://miransub.miranteam.uz/api/v1/accounts/${id}/`, data,{
         headers: {
           'Authorization': `Bearer ${isLogin}`,
           'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ const EditAdmins = ({ menu, setMenu }) => {
 
   const handleSubmit = (data) => {
     axios
-      .patch(`https://obidjon.pythonanywhere.com/api/v1/api/user-status/${id}/status/`, {},{
+      .patch(`https://miransub.miranteam.uz/api/v1/user-status/${id}/status/`, {},{
          headers: {
            'Authorization': `Bearer ${isLogin}`
          }
@@ -123,7 +123,7 @@ const EditAdmins = ({ menu, setMenu }) => {
   
   const handChange = (data) => {
     axios
-    .patch(`https://obidjon.pythonanywhere.com/api/v1/api/user-status/${id}/status/`, {},{
+    .patch(`https://miransub.miranteam.uz/api/v1/user-status/${id}/status/`, {},{
        headers: {
          'Authorization': `Bearer ${isLogin}`
        }

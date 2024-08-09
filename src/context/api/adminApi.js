@@ -4,7 +4,7 @@ export const userApi = api.injectEndpoints({
   endpoints: (build) => ({
     signIn: build.mutation({
       query: (body) => ({
-        url: "/api/login/",
+        url: "/login/",
         method: "POST",
         body
       }),
@@ -26,7 +26,7 @@ export const userApi = api.injectEndpoints({
     }),
     getAdd: build.query({
       query: (params) => ({
-          url: '/api/user-profile',
+          url: '/user-profile',
           params
       }),
       providesTags: ["Admin"]

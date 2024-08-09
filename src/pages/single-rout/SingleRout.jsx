@@ -51,7 +51,7 @@ const SingleRout = ({ menu, setMenu }) => {
     console.log(product);
 
     axios
-      .post('https://obidjon.pythonanywhere.com/api/v1/update/', product, {
+      .post('https://miransub.miranteam.uz/api/v1/update/', product, {
         headers: {
           'Authorization': `Bearer ${isLogin} `
         } 

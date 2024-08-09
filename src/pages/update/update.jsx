@@ -34,7 +34,7 @@ const Update = ({menu,setMenu,setRender}) => {
 
     useEffect(() =>{
         axios
-        .get(`https://obidjon.pythonanywhere.com/api/v1/update/${id}/`,{
+        .get(`https://miransub.miranteam.uz/api/v1/update/${id}/`,{
             headers: {
                 'Authorization': `Bearer ${isLogin} `
               } 
@@ -62,7 +62,7 @@ const Update = ({menu,setMenu,setRender}) => {
     const handelSubmit = (e) =>{
       e.preventDefault()
       axios
-      .post(`https://obidjon.pythonanywhere.com/api/v1/update-status/${id}/inactive/`, {},{
+      .post(`https://miransub.miranteam.uz/api/v1/update-status/${id}/inactive/`, {},{
         headers: {
             'Authorization': `Bearer ${isLogin} `,
             'content-type': "application/json"
