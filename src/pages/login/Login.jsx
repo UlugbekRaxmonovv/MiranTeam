@@ -16,14 +16,12 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState(initialState);
     const handleClickShowPassword = () => setShowPassword(!showPassword);
-    const [userLogin, { isSuccess, isLoading, data }] = useSignInMutation()
-   console.log(data);
+    const [userLogin, {data, isSuccess, isLoading,  }] = useSignInMutation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    console.log(data?.access);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -52,6 +50,7 @@ const Login = () => {
                         label="Username"
                         variant="outlined"
                         fullWidth
+                        placeholder='string3'
                         sx={{outline: 'none'}}
                         margin="normal"
                         name="username"
@@ -65,6 +64,7 @@ const Login = () => {
                         margin="normal"
                         type={showPassword ? 'text' : 'password'}
                         name="password"
+                        placeholder='stringstring'
                         value={formData.password}
                         onChange={handleChange}
                         sx={{outline: 'none'}}

@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState} from 'react';
+import { memo } from 'react';
 import { FiMenu } from "react-icons/fi";
 import "../../Sass/index.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +29,6 @@ const initialState = {
   update_issue: '',
   company_name: ''
 };
-// let tokin ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxNzUwMjM2LCJpYXQiOjE3MjE2NjM4MzYsImp0aSI6ImE5N2EzY2EwNzYyMjRjMDE5NmRiMzYzMDVlNmU2ODA1IiwidXNlcl9pZCI6MX0.M1IfbVyK8l3EohpCoYcVLpnervMJ6PZCluYNUmR2z1A"
 const SingleRout = ({ menu, setMenu }) => {
   const {data:dataAll}  = useGetAddQuery()
   let name = dataAll?.message.fullname
@@ -210,4 +210,4 @@ const SingleRout = ({ menu, setMenu }) => {
   );
 }
 
-export default SingleRout;
+export default memo(SingleRout);
