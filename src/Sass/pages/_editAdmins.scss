@@ -10,6 +10,7 @@
     justify-content: center;
     background-color: #F1F1F1;
     padding: 20px 0;
+    height: 100vh;
     .__a{
         max-width: 900px;
         width: 100%;
@@ -223,8 +224,11 @@
 
 ._admin.light{
     background-color: #404059;
+    height: 100vh;
     .__a{
         background-color: #404059;
+    // height: 100vh;
+
     ._admin_rows{
    
             p{

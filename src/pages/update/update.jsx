@@ -171,7 +171,7 @@ const Update = ({menu,setMenu,setRender}) => {
             </header>
 
 
-
+            <div className={`updatess ${theme ? "light" : ""}`}>
             <div className={`editS ${theme ? "light" : ""}`}>
         <div className="edit_form">
           <form action=""  onSubmit={handelSubmit}  >
@@ -210,6 +210,7 @@ const Update = ({menu,setMenu,setRender}) => {
             </div>
           </form>
         </div>
+      </div>
       </div>
         
         </>

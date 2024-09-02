@@ -227,7 +227,7 @@ const EditAdmins = ({ menu, setMenu }) => {
           </div>
         </nav>
       </header>
-
+      <div className={`updatess ${theme ? "light" : ""}`}>
       <div className={`_admin ${theme ? "light" : ""}`}>
         <div className="__a">
           <form onSubmit={handleFormSubmit}>
@@ -356,6 +356,7 @@ const EditAdmins = ({ menu, setMenu }) => {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </>
   );
