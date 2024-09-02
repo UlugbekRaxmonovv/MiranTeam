@@ -88,12 +88,18 @@
 }
   }
 }
+
+.updatess.light{
+  height: 100vh;
+  background-color: #404059;
+}
 .update.light{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding:  20px  20px;
   background-color: #404059;
+  // height: 100vh;
   .post{
     display: flex;
     align-items: center;

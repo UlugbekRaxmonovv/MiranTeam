@@ -228,6 +228,7 @@ const handlePageChange = (event, value) => {
                 </nav>
             </header>
 
+            <div className={`updatess ${theme ? "light" : ""}`}>
             <div className={`update ${theme ? "light" : ""}`}>
           <div className="post">
           <div className="update_all">
@@ -398,7 +399,7 @@ return user.company_name?.toLowerCase().includes(search.toLowerCase())
              </Box>
              </div>
             
-
+</div>
        
        </>
     );

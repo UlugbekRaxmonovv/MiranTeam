@@ -161,7 +161,8 @@ const Warehouse = ({ menu, setMenu, render }) => {
           </div>
         </nav>
       </header>
-      <div className={`update ${theme ? "light" : ""}`}>
+      <div className={`updatess ${theme ? "light" : ""}`}>
+  <div className={`update ${theme ? "light" : ""}`}>
         <div className="post">
           <div className="update_alls">
             <label htmlFor="" style={{ opacity: "0" }}>s</label>
@@ -288,6 +289,7 @@ const Warehouse = ({ menu, setMenu, render }) => {
           <Pagination count={Math.ceil(data?.length / itemsPerPage)} variant="outlined" page={page} onChange={handlePageChange} />
         </div>
       </Box>
+  </div>
     </>
   );
 };

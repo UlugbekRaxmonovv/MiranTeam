@@ -177,6 +177,8 @@ const Vendor = ({menu,setMenu,render}) => {
                 </nav>
             </header>
       
+
+            <div className={`updatess ${theme ? "light" : ""}`}>
             <div className={`update ${theme ? "light" : ""}`}>
           <div className="post">
           <div className="update_all">
@@ -325,6 +327,7 @@ const Vendor = ({menu,setMenu,render}) => {
               <Pagination  count={Math.ceil(data?.length / itemsPerPage)}  variant="outlined" page={page}  onChange={handlePageChange}  />
               </div>
              </Box>
+           </div>
            </div>
           
          
