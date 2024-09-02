@@ -313,18 +313,18 @@ const EditAdmins = ({ menu, setMenu }) => {
               <div className="single_row">
                 <label htmlFor="role">Role</label>
 
-                <input
+                {/* <input
                   type="text"
                   name="role"
-                  value={data.role == 1 ? "Manager" : "Admin"}
+                  value={data.role}
                   onChange={handleInputChange}
-                />
+                /> */}
               
-{/*                 
-                 <select name="" id="" onChange={(e) => setRole(e.target.value)}>
-                      <option value="0">Admin</option>
-                      <option value="1">Manager</option>
-                      </select> */}
+                
+                 <select name="role" id="" onChange={handleInputChange}>
+                      <option value="0">{data.role === 0 ? "Admin" : "Manager"}</option>
+                      <option value="1">{data.role === 1 ? "Manager" : "Manager"}</option>
+                      </select>
               </div>
                <div className="int">
                <label htmlFor="password">Password</label> <br />
