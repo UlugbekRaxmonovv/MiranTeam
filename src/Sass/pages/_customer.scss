@@ -448,12 +448,12 @@ h6{
   position: fixed;
   color: white;
   font-family: "Poppins";
-  background-color: black;
+  // background-color: black;
   width: fit-content;
   transform: translateX(-50%);
   transition: opacity .4s ease;
   z-index: 1;
-  margin-top: 20%;
+  margin-top: 10%;
 
 }
 
@@ -1035,7 +1035,7 @@ path:hover {
     transform: translateX(-50%);
     transition: opacity .4s ease;
     z-index: 1;
-    margin-top: 20%;
+    margin-top: 1% !important;
   
   }
   }
@@ -1207,7 +1207,7 @@ path:hover {
       transform: translateX(-50%);
       transition: opacity .4s ease;
       z-index: 1;
-      margin-top: 40% !important;
+      margin-top: 20% !important;
     
     }
     }
@@ -1375,7 +1375,7 @@ path:hover {
         transform: translateX(-50%);
         transition: opacity .4s ease;
         z-index: 1;
-        margin-top: 20%;
+        margin-top: 10%;
       
       }
       }
