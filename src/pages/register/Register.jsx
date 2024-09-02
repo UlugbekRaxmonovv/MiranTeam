@@ -146,7 +146,7 @@ const handlePageChange = (event, value) => {
                     <div className="header__right-box">
                         <div className="header__right-box__part">
                                 <FiMenu onClick={() => setMenu(p => !p)} className={`header__menu-btn ${!menu ? "show" : ""}`} />
-                       <h1>Companya</h1>
+                       <h1>Company</h1>
                         </div>
                         <div className="header__left-box">
 

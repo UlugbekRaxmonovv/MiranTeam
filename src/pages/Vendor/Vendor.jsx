@@ -178,7 +178,7 @@ const Vendor = ({menu,setMenu,render}) => {
             </header>
       
 
-            <div className={`updatess ${theme ? "light" : ""}`}>
+      <div className={`updatess ${theme ? "light" : ""}`}>
             <div className={`update ${theme ? "light" : ""}`}>
           <div className="post">
           <div className="update_all">
@@ -328,9 +328,8 @@ const Vendor = ({menu,setMenu,render}) => {
               </div>
              </Box>
            </div>
-           </div>
           
-         
+</div>
         </>
     )
 }
