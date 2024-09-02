@@ -64,7 +64,7 @@ const Create = ({ menu, setMenu }) => {
     console.log(admins);
     setState(initialState)
     axios
-    .post('https://obidjon.pythonanywhere.com/api/v1/api/accounts/', admins, {
+    .post('https://miransub.miranteam.uz/api/v1/accounts/', admins, {
       headers: {
           'Authorization': `Bearer ${isLogin}`,
        

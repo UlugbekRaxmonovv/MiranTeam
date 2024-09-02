@@ -316,7 +316,7 @@ const EditAdmins = ({ menu, setMenu }) => {
                 <input
                   type="text"
                   name="role"
-                  value={data.role}
+                  value={data.role == 1 ? "Manager" : "Admin"}
                   onChange={handleInputChange}
                 />
               
