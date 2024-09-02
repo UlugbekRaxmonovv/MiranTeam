@@ -971,7 +971,7 @@ path:hover {
     .svg{
       max-width: 500px;
       width: 100%;
-      height: 300px;
+      height: 200px;
       margin-left: -30px;
     }
     path {
@@ -1004,29 +1004,11 @@ path:hover {
   }
   
   #details-box {
-      box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
-      opacity: 0%;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 24px;
-      position: fixed;
-      color: white;
-      font-family: "Poppins";
-      background-color: black;
-      width: fit-content;
-      transform: translateX(-50%);
-      transition: opacity .4s ease;
-      z-index: 1;
-      margin-top: 90% !important;
-  }
-  
-  }
-  #details-box {
     box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
     opacity: 0%;
     padding: 10px !important;
     border-radius: 8px;
-    font-size: 18px !important;
+    font-size: 12px !important;
     position: fixed;
     color: white;
     font-family: "Poppins";
@@ -1035,9 +1017,11 @@ path:hover {
     transform: translateX(-50%);
     transition: opacity .4s ease;
     z-index: 1;
-    margin-top: 1% !important;
+    margin-top: 140% !important;
   
   }
+  }
+
   }
 
 
@@ -1188,28 +1172,29 @@ path:hover {
       .svg{
         max-width: 500px;
         width: 100%;
-        height: 400px;
+        height: 200px;
         margin-left: -20px;
+      }
+      #details-box {
+        box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
+        opacity: 0%;
+        padding: 10px !important;
+        border-radius: 8px;
+        font-size: 12px !important;
+        position: fixed;
+        color: white;
+        font-family: "Poppins";
+        background-color: black;
+        width: fit-content;
+        transform: translateX(-50%);
+        transition: opacity .4s ease;
+        z-index: 1;
+        margin-top: 40% !important;
+      
       }
      
     }
-    #details-box {
-      box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
-      opacity: 0%;
-      padding: 10px !important;
-      border-radius: 8px;
-      font-size: 12px !important;
-      position: fixed;
-      color: white;
-      font-family: "Poppins";
-      background-color: black;
-      width: fit-content;
-      transform: translateX(-50%);
-      transition: opacity .4s ease;
-      z-index: 1;
-      margin-top: 20% !important;
-    
-    }
+ 
     }
 
 
@@ -1356,11 +1341,12 @@ path:hover {
         .svg{
           max-width: 500px;
           width: 100%;
-          height: 400px;
+          height: 200px;
           margin-left: -20px;
         }
        
       }
+
       #details-box {
         box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.7);
         opacity: 0%;
