@@ -321,9 +321,9 @@ const EditAdmins = ({ menu, setMenu }) => {
                 /> */}
               
                 
-                 <select name="role" id="" onChange={handleInputChange}>
+              <select name="role" id="" onChange={handleInputChange}>
                       <option value="0">{data.role === 0 ? "Admin" : "Manager"}</option>
-                      <option value="1">{data.role === 1 ? "Manager" : "Manager"}</option>
+                      <option value="1">{data.role === 1 ? "Admin" : "Manager"}</option>
                       </select>
               </div>
                <div className="int">
