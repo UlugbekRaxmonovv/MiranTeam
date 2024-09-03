@@ -33,6 +33,7 @@ import { useCreateProductMutation } from '../../context/api/productApi';
 import { toast } from 'react-toastify';
 import { IoSunnyOutline, IoSunnySharp } from 'react-icons/io5';
 import { Context } from '../../components/DarckMore/Context';
+// import { useGetAddQuery } from '../../context/api/adminApi';
 import axios from 'axios';
 const initialState={
   company_name:""
@@ -42,7 +43,7 @@ const Register = ({menu,setMenu,render,setRender}) => {
   const [ companyAll,setCompany] = useState(false);
   
   const {setState,state,handleChange} = useFormInputValue(initialState)
-  
+  const {data:role}  = useGetAddQuery()
   
   const handelCompany =(e) =>{
     e.preventDefault();
@@ -247,7 +248,7 @@ const handlePageChange = (event, value) => {
           </div>
              <div className="btn_row">
               <Link>
-              <button onClick={() => setCompany(true)}>Add company</button>
+              <button onClick={() => setCompany(true)} disabled={role?.message?.role !==1}> { role?.message?.role === 1 ? "Add company"  : " Add company"}</button>
               </Link>
               
              </div>
