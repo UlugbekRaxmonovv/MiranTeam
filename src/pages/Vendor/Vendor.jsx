@@ -222,7 +222,7 @@ const Vendor = ({menu,setMenu,render}) => {
           </div>
           <div className="btn_row">
               <Link to={'/admin/create'}>
-              <button>Add user</button>
+              <button disabled={role?.message?.role !==1}  style={{ cursor: role?.message?.role === 1 ? 'pointer' : 'not-allowed',  }}> { role?.message?.role === 1 ? " Add user"  : " Add user"}</button>
               </Link>
               
              </div>

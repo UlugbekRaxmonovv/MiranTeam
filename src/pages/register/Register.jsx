@@ -269,12 +269,18 @@ const handlePageChange = (event, value) => {
              </div>
            </div>
           </div>
-             <div className="btn_row">
-              <Link>
-              <button onClick={() => setCompany(true)}>Add company</button>
-              </Link>
-              
-             </div>
+          <div className="btn_row">
+          <Link>
+    <button
+      onClick={() => setCompany(true)}
+      disabled={role?.message?.role !== 1} 
+      style={{ cursor: role?.message?.role === 1 ? 'pointer' : 'not-allowed' }}
+    >
+      {role?.message?.role === 1 ? "Add company" : "Add company"}
+    </button>
+  </Link>
+</div>
+
            </div>
 
            {
