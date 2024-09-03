@@ -384,7 +384,28 @@ return user.company_name?.toLowerCase().includes(search.toLowerCase())
        <TableCell className="TableCell" align="left">{row.created_at}</TableCell>
        <TableCell className="TableCell" align="left">{row?.company_author}</TableCell>
        <TableCell className="TableCell" align="center">{row.company_status ? <button style={{color:'white',padding:'4px 12px',backgroundColor:'lightgreen',borderRadius:'4px'}}>Active</button>: <button style={{color:'white',padding:'4px 12px',backgroundColor:'#E03D56',borderRadius:'4px'}}>inactive</button>}</TableCell>
-       <TableCell className="TableCell" align="left">{row.company_status ? <img onClick={() => handelComponyAll(row.id)} width={40} height={40} style={{borderRadius:'20px'}}  src={rasm}/>    : <img onClick={() => handelComponyAll(row.id)} style={{borderRadius:'20px',marginLeft:'8px'}} width={25} height={25} src={rasm1}/>  }</TableCell>
+       <TableCell className="TableCell" align="left">
+  {row.company_status ? (
+    <img
+      onClick={role?.message?.role === 1 ? () => handelComponyAll(row.id) : undefined}
+      width={40}
+      height={40}
+      style={{ borderRadius: '20px', cursor: role?.message?.role === 1 ? 'pointer' : 'not-allowed' }}
+      src={rasm}
+      alt="Company Status Image"
+    />
+  ) : (
+    <img
+      onClick={role?.message?.role === 1 ? () => handelComponyAll(row.id) : undefined}
+      width={25}
+      height={25}
+      style={{ borderRadius: '20px', marginLeft: '8px', cursor: role?.message?.role === 1 ? 'pointer' : 'not-allowed' }}
+      src={rasm1}
+      alt="Company Status Image"
+    />
+  )}
+</TableCell>
+
      </TableRow>
    ))}
  </TableBody>
