@@ -106,7 +106,7 @@ const EditAdmins = ({ menu, setMenu }) => {
       .then(res => {
          console.log('Account status updated:', res.data);
          toast.success('Admin account status updated')
-         navigate(-1)
+         
          handleClose()
        })
        .catch(err => {
@@ -238,10 +238,10 @@ const EditAdmins = ({ menu, setMenu }) => {
                 {
                  roles?.message?.role === 1 
                   ? 
-                  data?.is_active ?   <button   type="submit">Save</button>
+                  data?.is_active ?   <button   type="submit" onClick={() =>navigate(-1)}>Save</button>
                   : ""
                  :
-                 <button disabled={roles?.message?.role !==1}  type="submit">Save</button>
+                 <button disabled={roles?.message?.role !==1}  type="submit"   onClick={() =>navigate(-1)}>Save</button>
                 
                 }
                 </div>
