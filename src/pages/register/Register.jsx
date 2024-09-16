@@ -34,6 +34,8 @@ import { toast } from 'react-toastify';
 import { IoSunnyOutline, IoSunnySharp } from 'react-icons/io5';
 import { Context } from '../../components/DarckMore/Context';
 // import { useGetAddQuery } from '../../context/api/adminApi';
+import  moon  from '../../assets/imgs/moon.png' 
+import moon1 from '../../assets/imgs/moon1.png'
 import axios from 'axios';
 const initialState={
   company_name:""
@@ -45,30 +47,7 @@ const Register = ({menu,setMenu,render,setRender}) => {
   const {setState,state,handleChange} = useFormInputValue(initialState)
   const {data:role}  = useGetAddQuery()
   
-  const handelCompany =(e) =>{
-    e.preventDefault();
-    let company ={
-    company_name: state.company_name
-  }
-  axios
-   .post(`https://miransub.miranteam.uz/api/v1/company/`, company, {
-      headers: {
-        Authorization: `Bearer ${isLogin}`,
-      },
-    })
-    .then((res) => {
-      setCompany(true)
-      setState(initialState)
-      setRender(p => !p)
-      toast.success('User created')
-    })
-    .catch((error) => {
-       console.error("Error:", error);
-     })
 
-
-  
-}
 document.body.style.overflow =  companyAll ? "hidden" : "auto"
 let dispatch = useDispatch()
 const [ search,setSearch]  =useState("")
@@ -95,7 +74,7 @@ useEffect(() => {
     });
 }, [selectedStatus, render, isLogin]);
 
-const [itemsPerPage, setItemsPerPage] = useState(Number(localStorage.getItem("pages")) || 10);
+const [itemsPerPage, setItemsPerPage] = useState(Number(localStorage.getItem("pages")) || 7);
 const [page, setPage] = useState(1);
 const handlePageChange = (event, value) => {
     setPage(value);
@@ -140,6 +119,31 @@ const handlePageChange = (event, value) => {
 }
 
 
+const handelCompany =(e) =>{
+  e.preventDefault();
+  let company ={
+  company_name: state.company_name
+}
+axios
+ .post(`https://miransub.miranteam.uz/api/v1/company/`, company, {
+    headers: {
+      Authorization: `Bearer ${isLogin}`,
+    },
+  })
+  .then((res) => {
+    setCompany(true)
+    setState(initialState)
+    setRender(p => !p)
+    toast.success('User created')
+  })
+  .catch((error) => {
+     console.error("Error:", error);
+   })
+
+
+
+}
+
     return (
        <>
           <header className={`header ${theme ? "light" : ""}`}>
@@ -153,13 +157,14 @@ const handlePageChange = (event, value) => {
 
                         {
                                   theme ? 
-                                  <IoSunnyOutline  className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:30, height:30, cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon1} alt="moon" />
                                   :
-                                  <IoSunnySharp className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:20, height:20, objectFit:'cover', cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon} alt="moon" />
+                                  
                                 }
                            
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography sx={{ minWidth: 100 }}>{name}</Typography>
+        <Typography sx={{ minWidth: 100,whiteSpace: "nowrap" }}>{name}</Typography>
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}
@@ -212,7 +217,7 @@ const handlePageChange = (event, value) => {
           <Avatar /> {name}
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+        <Avatar /><Link to={'/admin/vendor'}>     My account </Link>
         </MenuItem>
         <Divider />
         <MenuItem onClick={() => dispatch(logout())}>
@@ -283,30 +288,7 @@ const handlePageChange = (event, value) => {
 
            </div>
 
-           {
-            companyAll ? 
-            <Modul btn1={setCompany} width='500px' height='10px'>
-                  <div className="CompanyName">
-<form action=""   onSubmit={handelCompany}>
-<div className="CompanyName_All">
-  <p>Company Name</p>
-  <input type="text" value={state.company_name}  onChange={handleChange} name='company_name' />
-  <div className="Cancel">
-  <div className="Cancel_r">
-     <button onClick={() =>setCompany(null)}>Cancel</button>
-    </div>
-    <div className="Cancel_r_s">
-     <button>{loading ? 'loading' : 'Save'}</button>
-    </div>
-  </div>
-</div>
-</form>
-                  </div>
-
-              </Modul>
-              :
-              <> </>
-           }
+      
            {
             loading ? 
          (   <div className={`tar ${theme ? "light" : ""}`}>
@@ -389,7 +371,7 @@ return user.company_name?.toLowerCase().includes(search.toLowerCase())
        <TableCell className="TableCell" align="left" sx={{cursor:'pointer'}}>{row.company_name}</TableCell>
        <TableCell className="TableCell" align="left">{row.created_at}</TableCell>
        <TableCell className="TableCell" align="left">{row?.company_author}</TableCell>
-       <TableCell className="TableCell" align="center">{row.company_status ? <button style={{color:'white',padding:'4px 12px',backgroundColor:'lightgreen',borderRadius:'4px'}}>Active</button>: <button style={{color:'white',padding:'4px 12px',backgroundColor:'#E03D56',borderRadius:'4px'}}>inactive</button>}</TableCell>
+       <TableCell className="TableCell" align="center">{row.company_status ? <button style={{color:'white',padding:'4px 12px',backgroundColor:'lightgreen',borderRadius:'4px'}}>Active</button>: <button style={{color:'white',padding:'4px 12px',backgroundColor:'#E03D56',borderRadius:'4px'}}>Inactive</button>}</TableCell>
        <TableCell className="TableCell" align="left">
   {row.company_status ? (
     <img
@@ -429,8 +411,33 @@ return user.company_name?.toLowerCase().includes(search.toLowerCase())
             
 </div>
        
+{
+            companyAll ? 
+            <Modul btn1={setCompany} width='500px' height='10px'>
+                  <div className="CompanyName">
+<form action=""   onSubmit={handelCompany}>
+<div className="CompanyName_All">
+  <p>Company Name</p>
+  <input type="text" value={state.company_name}  onChange={handleChange} name='company_name' />
+  <div className="Cancel">
+  <div className="Cancel_r">
+     <button onClick={() =>setCompany(null)}>Cancel</button>
+    </div>
+    <div className="Cancel_r_s">
+     <button>{loading ? 'loading' : 'Save'}</button>
+    </div>
+  </div>
+</div>
+</form>
+                  </div>
+
+              </Modul>
+              :
+              <> </>
+           }
        </>
     );
+    
 }
 
 export default Register;

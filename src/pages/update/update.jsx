@@ -22,6 +22,8 @@ import { IoSunnyOutline, IoSunnySharp } from 'react-icons/io5';
 import { useGetAddQuery } from '../../context/api/adminApi';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import  moon  from '../../assets/imgs/moon.png' 
+import moon1 from '../../assets/imgs/moon1.png'
 const Update = ({menu,setMenu,setRender}) => {
   const {data:dataAll}  = useGetAddQuery()
   let name = dataAll?.message.fullname
@@ -94,9 +96,10 @@ const Update = ({menu,setMenu,setRender}) => {
 
                         {
                                   theme ? 
-                                  <IoSunnyOutline  className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:30, height:30, cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon1} alt="moon" />
                                   :
-                                  <IoSunnySharp className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:20, height:20, objectFit:'cover', cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon} alt="moon" />
+                                  
                                 }
                            
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>

@@ -457,6 +457,13 @@ h6{
 
 }
 
+@media(max-width:1200px){
+  .container{
+  .svg{
+    margin-left: 0;
+  }
+  }
+}
 
 @media(max-width:900px){
   

@@ -1,7 +1,6 @@
 import { FiMenu } from "react-icons/fi"
 import "../../Sass/index.scss"
-import { HiOutlineSearch } from "react-icons/hi"
-import { IoCloseCircleOutline, IoSunnyOutline, IoSunnySharp } from "react-icons/io5"
+import { IoSunnyOutline, IoSunnySharp } from "react-icons/io5"
 import { memo, useContext, useState } from "react"
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux"
@@ -16,8 +15,12 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
-import { useGetAddQuery } from "../../context/api/adminApi"  
+import { useGetAddQuery } from "../../context/api/adminApi" 
+import  moon  from '../../assets/imgs/moon.png' 
+import moon1 from '../../assets/imgs/moon1.png'
 import { Context } from "../DarckMore/Context"
+import { LuMoon } from "react-icons/lu";
+import { Link } from "react-router-dom";
 const Header = ({ menu, setMenu }) => {
  
   const {theme, setTheme} =useContext(Context)
@@ -48,12 +51,16 @@ const Header = ({ menu, setMenu }) => {
                         </div>
                         <div className="header__left-box" >
 
-                        {
+                      <div className="als">
+
+                      {
                                   theme ? 
-                                  <IoSunnyOutline  className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:30, height:30, cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon1} alt="moon" />
                                   :
-                                  <IoSunnySharp className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:20, height:20, objectFit:'cover', cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon} alt="moon" />
+                                  
                                 }
+                      </div>
                            
                             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                               <Typography className="logo_w" sx={{ minWidth: 100,  }}>{name}</Typography>
@@ -109,7 +116,7 @@ const Header = ({ menu, setMenu }) => {
                                 <Avatar /> {name}
                               </MenuItem>
                               <MenuItem onClick={handleClose}>
-                                <Avatar /> My account
+                              <Avatar /><Link to={'/admin/vendor'}>     My account </Link>
                               </MenuItem>
                               <Divider />
                               <MenuItem onClick={() => dispatch(logout())}>

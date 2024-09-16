@@ -30,6 +30,8 @@ import { useGetAddQuery } from "../../context/api/adminApi"
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import { Context } from "../../components/DarckMore/Context"
+import  moon  from '../../assets/imgs/moon.png' 
+import moon1 from '../../assets/imgs/moon1.png'
 import axios from "axios"
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -101,9 +103,10 @@ const Vendor = ({menu,setMenu,render}) => {
 
                         {
                                   theme ? 
-                                  <IoSunnyOutline  className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:30, height:30, cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon1} alt="moon" />
                                   :
-                                  <IoSunnySharp className='svg' onClick={() =>setTheme(!theme)} />
+                                  <img style={{width:20, height:20, objectFit:'cover', cursor:'pointer'}} onClick={() =>setTheme(!theme)} src={moon} alt="moon" />
+                                  
                                 }
                            
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
